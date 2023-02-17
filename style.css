@@ -26,6 +26,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -40,6 +42,8 @@ header {
     border-top: 2px solid var(--orange);
 }
 
+/* Logo */
+
 .logo {
     margin: auto;
     max-width: 1280px;
@@ -51,22 +55,34 @@ header {
     width: 15%;
 }
 
-/* Navigation bar */
+/* Hamburger Menu */
 
-nav {
-    max-width: 1280px;
-    margin: auto;
+
+/* Style label tag */
+.hamb {
+    display: none;
 }
 
-.nav-links {
+
+/* Hide checkbox */
+.side-menu {
+    display: none;
+}
+
+
+/* Navigation bar */
+
+.nav {
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     justify-content: center;
     border-top: 2px solid var(--black);
     border-bottom: 2px solid var(--black);
+    max-height: none;
 }
 
 ul {
-    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,10 +94,13 @@ li {
 }
 
 li a {
-    text-decoration: none;
     color: #080808;
     text-transform: uppercase;
     font-family: "roboto-bold";
+}
+
+li a:hover {
+    color: var(--orange);
 }
 
 .active-link {
@@ -92,7 +111,8 @@ li a {
 
 .container {
     max-width: 1280px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 2%;
 }
 
 .slider,
@@ -172,6 +192,7 @@ button {
 .gallery {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .gallery>img {
@@ -194,24 +215,197 @@ button {
 
 footer {
     border-top: 2px solid var(--black);
+    padding: 0 2%;
 }
 
 .detail {
     max-width: 1280px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin: auto;
     padding: 6px 0;
 }
 
-.detail>p {
+.detail>span {
     font-family: "roboto-regular";
     font-weight: normal;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+span>img {
+    margin-right: 4px;
+    width: 14px;
 }
 
 .company-name {
     color: var(--orange);
     text-decoration: none;
+    margin-left: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        background-color: var(--white);
+        width: 100%;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0;
+        text-align: start;
+        padding: 3% 2%;
+    }
+
+    .logo img {
+        width: 40%;
+    }
+
+    .hamb {
+        display: block;
+        cursor: pointer;
+        padding: 3% 2%;
+    }
+
+    /* Style span tag */
+    .hamb-line {
+        background: var(--black);
+        display: none;
+        height: 2px;
+        position: relative;
+        width: 20px;
+    }
+
+    .hamb-line::before,
+    .hamb-line::after {
+        background: var(--black);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .hamb-line::before {
+        top: 5px;
+    }
+
+    .hamb-line::after {
+        top: -5px;
+    }
+
+    .nav {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        display: block;
+        top: 70px;
+        background: var(--white);
+        border: 0;
+        margin: 0;
+        text-align: center;
+        max-width: none;
+        max-height: 0;
+        transition: max-height .5s ease-out;
+    }
+
+    ul {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    /* Toggle menu icon */
+    .side-menu:checked~.nav {
+        max-height: 100%;
+
+    }
+
+    .side-menu:checked~body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .side-menu:checked~.hamb {
+        padding: 3% 2%;
+    }
+
+    .side-menu:checked~.hamb>img {
+        display: none;
+    }
+
+    .side-menu:checked~.hamb .hamb-line {
+        background: transparent;
+        display: block;
+    }
+
+    .side-menu:checked~.hamb .hamb-line::before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .side-menu:checked~.hamb .hamb-line::after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .container {
+        padding: 0 2%;
+    }
+
+    .slider {
+        padding: 0;
+    }
+
+    .intro {
+        padding: 24px 0;
+    }
+
+    .intro-img {
+        width: 50%;
+    }
+
+    .gallery>img {
+        margin: 16px;
+        width: 160px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    h1,
+    h2 {
+        font-size: 30px;
+    }
+
+    .content,
+    .description {
+        font-size: 14px;
+    }
+
+    .gallery>img {
+        width: 140px;
+    }
+
+    .detail {
+        line-height: 16px;
+    }
+
+    .detail>span {
+        font-size: 12px;
+    }
 }

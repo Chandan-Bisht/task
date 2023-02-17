@@ -10,40 +10,58 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="images/dummy-logo.png" alt="dummy-logo">
-        </div>
-        <nav>
-            <div class="nav-links">
+        <div class="nav-wrapper">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/dummy-logo.png" alt="dummy-logo" />
+            </div>
+
+            <!-- Hamburger icon -->
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb" for="side-menu">
+                <img src="images/nav-button-icon.png" alt="menu-button" width="20px" />
+                <span class="hamb-line"></span>
+            </label>
+
+            <!-- Menu -->
+            <nav class="nav">
                 <ul>
                     <li>
-                        <a href="" class="active-link">Home</a>
+                        <a href="#" class="active-link">Home</a>
                     </li>
                     <li>
-                        <a href="">About us</a>
+                        <a href="#">About us</a>
                     </li>
                     <li>
-                        <a href="">Creation</a>
+                        <a href="#">Creation</a>
                     </li>
                     <li>
-                        <a href="">Gallery</a>
+                        <a href="#">Gallery</a>
                     </li>
                     <li>
-                        <a href="">Features</a>
+                        <a href="#">Features</a>
                     </li>
                     <li>
-                        <a href="">Contact us</a>
+                        <a href="#">Contact us</a>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
-    <section>
+
+    <!-- Main Container -->
+    <main>
         <div class="container">
+
+            <!-- Slider image section -->
             <div class="slider">
                 <img src="images/slider-1.jpg" alt="slider-image">
             </div>
+
+            <!-- Welcome section -->
             <div class="intro">
                 <h1>Welcome to Dummy!</h1>
                 <hr />
@@ -72,6 +90,8 @@
                     <button type="button">Read More..</button>
                 </div>
             </div>
+
+            <!-- Image Showcase section -->
             <div class="image-showcase">
                 <h2>Image Showcase</h2>
                 <hr />
@@ -81,6 +101,8 @@
                     <img src="images/3.jpg" alt="image-3">
                 </div>
             </div>
+
+            <!-- History section -->
             <div class="history">
                 <h2>History</h2>
                 <hr />
@@ -127,16 +149,21 @@
                 </div>
             </div>
         </div>
-    </section>
-    <footer>
-        <div class="detail">
-            <p>&copy; 2021 Dummy - All Rights Reserved</p>
-            <p>
-                Website Designed & Developed By
-                <a href="" class="company-name">WeDevelopTech</a>
-            </p>
-        </div>
-    </footer>
+        </,>
+
+        <!-- Footer -->
+        <footer>
+            <div class="detail">
+                <span>
+                    <img src="images/copyright.png" alt="copyright" />
+                    2021 Dummy - All Rights Reserved
+                </span>
+                <span>
+                    Website Designed & Developed By
+                    <a href="" class="company-name">WeDevelopTech</a>
+                </span>
+            </div>
+        </footer>
 </body>
 
 </html>
